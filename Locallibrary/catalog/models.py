@@ -19,8 +19,7 @@ class Genre(models.Model):
 
 class Language(models.Model):
     """Model representing a Language (e.g. English, French, Japanese, etc.)"""
-    name = models.CharField(max_length=200,
-                            help_text="Enter the book's natural language (e.g. English, French, Japanese etc.)")
+    name = models.CharField(max_length=200,help_text="Enter the book's natural language (e.g. English, French, Japanese etc.)")
 
     def __str__(self):
         """String for representing the Model object (in Admin site etc.)"""
@@ -121,11 +120,3 @@ class Author(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return '{0}, {1}'.format(self.last_name, self.first_name)
-    
-
-def display_genre(self):
-    """Create a string for the Genre. This is required to display genre in Admin."""
-    return ', '.join(genre.name for genre in self.genre.all()[:3])
-
-display_genre.short_description = 'Genre'
-
